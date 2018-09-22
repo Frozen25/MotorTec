@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MotorTECApp</string>
+    <string name="tab_text_1">Autos Nuevos</string>
+    <string name="tab_text_2">Autos Usados</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_car">Nuevo Auto</string>
+    <string name="connect_error">No tienes conexión a internet</string>
+    <string name="exitMessage">Presiona dos veces para salir</string>
+</resources>
