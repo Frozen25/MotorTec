@@ -7,6 +7,8 @@ const bodyparser = require('body-parser');
 
 const app = express();
 
+const carRoutes = require('./routes/car');
+const locationRoutes = require('./routes/location');
 const customerRoutes = require('./routes/customer');
 
 // configuración, configura modulos necesarios para el programa, como express
@@ -26,6 +28,8 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 // rutas, define las rutas a las cuales el cliente va a acceder para pedir la información
+app.use('/', carRoutes);
+app.use('/', locationRoutes);
 app.use('/', customerRoutes);
 
 app.listen(app.get('port'), () => {

@@ -44,12 +44,14 @@ public class Post {
         JSONObject jsonObject = new JSONObject();
 
         for (int i = 0; i < attributes.length; ++i) {
-            jsonObject.accumulate(attributes[i], values[i]);
-        }
 
-        /*jsonObject.accumulate("name", "TOBeMaN");
-        jsonObject.accumulate("address",  "SuizaA");
-        jsonObject.accumulate("phone",  "2423432");*/
+            if (android.text.TextUtils.isDigitsOnly(values[i])) {
+                jsonObject.accumulate(attributes[i], Integer.parseInt(values[i]));
+            } else {
+                jsonObject.accumulate(attributes[i], values[i]);
+            }
+
+        }
 
         return jsonObject;
     }
