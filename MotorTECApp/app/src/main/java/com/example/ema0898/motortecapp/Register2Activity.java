@@ -66,6 +66,8 @@ public class Register2Activity extends AppCompatActivity  {
         get = new Get();
         post = new Post();
 
+        // Inicia los spinners
+
         clientName = bundle.getString(Constants.registerBundleName);
         clientLastName = bundle.getString(Constants.registerBundleLastName);
         clientID = bundle.getInt(Constants.registerBundleID);
@@ -80,8 +82,10 @@ public class Register2Activity extends AppCompatActivity  {
 
         districtPost = 0;
 
+        // Obtiene la lista de paises
         new FillCountryTask().execute(Constants.countryRoute);
 
+        // Dependiendo del pais seleccionado muestra las provincias
         spCountry.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -99,6 +103,7 @@ public class Register2Activity extends AppCompatActivity  {
             }
         });
 
+        // Dependiendo de la provincia seleccionada muestra los cantones
         spProvince.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -113,6 +118,7 @@ public class Register2Activity extends AppCompatActivity  {
             }
         });
 
+        // Dependiendo del canton seleccionado muestra los distritos
         spCanton.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -127,10 +133,10 @@ public class Register2Activity extends AppCompatActivity  {
             }
         });
 
+        // Obtiene el distrito necesario
         spDistrict.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
                 districtPost = districtModels.get(position).getIdDistrito();
             }
 
@@ -142,6 +148,7 @@ public class Register2Activity extends AppCompatActivity  {
 
     }
 
+    // Si se cumplen las condiciones, llama al thread que hace el post al servidor
     public void onClick(View v) {
         if (districtPost == 0 || etDistrictDescription.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), R.string.Register2ActivityError,Toast.LENGTH_SHORT).show();
@@ -152,6 +159,7 @@ public class Register2Activity extends AppCompatActivity  {
         }
     }
 
+    // Guarda el nombre del cliente para usarlo luego
     private void saveClientName() {
         SharedPreferences preferences = getSharedPreferences(Constants.sharedPreferencesClientNameFile, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -160,6 +168,7 @@ public class Register2Activity extends AppCompatActivity  {
         editor.commit();
     }
 
+    // Obtiene los paises y llena el spinner
     public class FillCountryTask extends AsyncTask<String, String, ArrayList<String>> {
 
         @Override
@@ -193,6 +202,7 @@ public class Register2Activity extends AppCompatActivity  {
         }
     }
 
+    // Obtiene las provincias y llena el spinner
     public class FillProvinceTask extends AsyncTask<String, String, ArrayList<String>> {
 
         @Override
@@ -227,6 +237,7 @@ public class Register2Activity extends AppCompatActivity  {
         }
     }
 
+    // Obtiene los cantones y llena el spinner
     public class FillCantonTask extends AsyncTask<String, String, ArrayList<String>> {
 
         @Override
@@ -261,6 +272,7 @@ public class Register2Activity extends AppCompatActivity  {
         }
     }
 
+    // Obtiene los distritos y llena el spinner
     public class FillDistrictTask extends AsyncTask<String, String, ArrayList<String>> {
 
         @Override
@@ -300,6 +312,7 @@ public class Register2Activity extends AppCompatActivity  {
         }
     }
 
+    // Envia los datos al servidor
     private class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {

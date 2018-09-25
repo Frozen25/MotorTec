@@ -9,9 +9,14 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/change_concessionaire"
+        android:orderInCategory="200"
+        android:title="@string/action_change_concessionaire"
+        app:showAsAction="never" />
+    <item
         android:icon="@drawable/ic_directions_car_black_24dp"
         android:id="@+id/action_add_car"
-        android:orderInCategory="200"
+        android:orderInCategory="300"
         android:title="@string/add_car"
         app:showAsAction="ifRoom" />
 </menu>

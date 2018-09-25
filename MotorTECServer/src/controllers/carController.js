@@ -2,7 +2,8 @@ const controller = {};
 
 controller.getNew = (request, response) => {
 	request.getConnection((err, connection) => {
-		connection.query('CALL getNewCar();', (err, customers) => {
+		const id = request.params.id;
+		connection.query('CALL getNewCar(?);', [id], (err, customers) => {
 			if (err) {
 				console.log(err);
 			}
@@ -14,7 +15,8 @@ controller.getNew = (request, response) => {
 
 controller.getUsed = (request, response) => {
 	request.getConnection((err, connection) => {
-		connection.query('CALL getUsedCar();', (err, customers) => {
+		const id = request.params.id;
+		connection.query('CALL getUsedCar(?);', [id], (err, customers) => {
 			if (err) {
 				console.log(err);
 			}
@@ -37,6 +39,18 @@ controller.getOne = (request, response) => {
 	});
 };
 
+controller.getCs = (request, response) => {
+	request.getConnection((err, connection) => {		
+		// Get an employee
+		const id = request.params.id;
+		connection.query('SELECT Nombre FROM Concesionario', [id], (err, rows, fields) => {
+			if (err) {
+				console.log(err);
+			}
+			response.send(rows);
+		});	
+	});
+};
 
 /*
 var post  = {id: 1, title: 'Hello MySQL'};

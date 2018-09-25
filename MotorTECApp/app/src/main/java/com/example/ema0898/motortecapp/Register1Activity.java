@@ -9,6 +9,9 @@ import android.widget.EditText;
 
 import com.example.ema0898.motortecapp.tools.Constants;
 
+/**
+ * Realiza la primera parte del registro del cliente
+ */
 public class Register1Activity extends AppCompatActivity {
 
     private EditText etName;
@@ -38,6 +41,7 @@ public class Register1Activity extends AppCompatActivity {
         etPhone = findViewById(R.id.edPhone);
         btnSubmit = findViewById(R.id.btnSubmit);
 
+        // Revisa que todos los campos estén llenos y que la cédula y el telefono sean enteros
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,6 +84,8 @@ public class Register1Activity extends AppCompatActivity {
                     phoneOK = true;
                 }
 
+                // Si se cumplen las condiciones, envia la informacion de los edittext a la siguiente activity
+                // de registro
                 if (nameOK && lastNameOK && idOK && phoneOK) {
                     Bundle bundle = new Bundle();
 

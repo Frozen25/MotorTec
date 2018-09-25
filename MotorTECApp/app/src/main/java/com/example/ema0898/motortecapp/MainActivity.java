@@ -1,6 +1,7 @@
 package com.example.ema0898.motortecapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.ema0898.motortecapp.fragments.NewCar;
 import com.example.ema0898.motortecapp.fragments.UsedCar;
+import com.example.ema0898.motortecapp.tools.Constants;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,11 +30,15 @@ public class MainActivity extends AppCompatActivity {
 
     boolean pressedTwice;
 
+    public static String csName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        csName = getCsName();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -119,4 +125,12 @@ public class MainActivity extends AppCompatActivity {
             return 2;
         }
     }
+
+    private String getCsName() {
+        SharedPreferences preferences = getSharedPreferences(Constants.sharedPreferencedCsName, MODE_PRIVATE);
+        String usuario = preferences.getString(Constants.sharedPreferencedCsName, "Empty");
+
+        return usuario;
+    }
 }
+

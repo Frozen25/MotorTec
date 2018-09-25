@@ -22,6 +22,9 @@ import java.util.List;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
+/**
+ * Clase encargada de servir para llenar la lista de carros
+ */
 public class CustomAdapter extends ArrayAdapter {
     private List<CarModel> carModels;
     private int resource;
@@ -35,6 +38,13 @@ public class CustomAdapter extends ArrayAdapter {
         inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
     }
 
+    /**
+     * Inicia todas la variables que tendra la lista de los carros
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

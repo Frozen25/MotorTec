@@ -1,8 +1,5 @@
 package com.example.ema0898.motortecapp.connections;
 
-import android.util.Log;
-
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -12,6 +9,10 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+/**
+ * Clase encargada de hacer post al servidor
+ */
 
 public class Post {
 
@@ -39,6 +40,13 @@ public class Post {
 
     }
 
+    /**
+     * Crea el objeto JSON con los atributos que se pasan por parametro
+     * @param attributes atributos del JSON
+     * @param values los valores de los atributos del JSON
+     * @return objetos JSON formado
+     * @throws JSONException
+     */
     private JSONObject buidJsonObject(String[] attributes, String[] values) throws JSONException {
 
         JSONObject jsonObject = new JSONObject();
@@ -50,12 +58,17 @@ public class Post {
             } else {
                 jsonObject.accumulate(attributes[i], values[i]);
             }
-
         }
 
         return jsonObject;
     }
 
+    /**
+     * Envia el mensaje al servidor
+     * @param conn
+     * @param jsonObject
+     * @throws IOException
+     */
     private void setPostRequestContent(HttpURLConnection conn, JSONObject jsonObject) throws IOException {
 
         OutputStream os = conn.getOutputStream();

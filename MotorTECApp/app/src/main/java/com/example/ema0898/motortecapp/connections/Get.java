@@ -8,6 +8,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Clase encargada de hacer los get al servidor
+ * hace el get y lo guarda en un string para luego devolverlo
+ */
 public class Get {
 
     public String httpGet(String myUrl) {

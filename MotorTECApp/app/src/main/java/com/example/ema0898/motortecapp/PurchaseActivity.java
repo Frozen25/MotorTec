@@ -15,6 +15,7 @@ public class PurchaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchase);
 
+        // Si el cliente ya se había registrado, hace la compra sino, lo envia a la activity de registro
         if(getClientName().equalsIgnoreCase("Empty")) {
             Toast.makeText(getApplicationContext(), "Necesita registrarse", Toast.LENGTH_SHORT).show();
             Intent intent1 = new Intent(PurchaseActivity.this, Register1Activity.class);
@@ -27,6 +28,7 @@ public class PurchaseActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
     }
 
+    // Obtiene el nombre del cliente
     private String getClientName() {
         SharedPreferences preferences = getSharedPreferences(Constants.sharedPreferencesClientNameFile, MODE_PRIVATE);
         String usuario = preferences.getString(Constants.sharedPreferencesClientName, "Empty");

@@ -1,5 +1,10 @@
 package com.example.ema0898.motortecapp.models;
 
+/**
+ * Clase encargada de servid como modelo para parsear el JSON con la biblioteca GSON
+ * los atributos deben tener el mismo nombre que los atributos del JSON
+ * se utiliza para parsear la informacion de la lista de autos
+ */
 public class CarModel {
 
     private int idCoche;
@@ -8,7 +13,7 @@ public class CarModel {
     private String Color;
     private int Estado;
     private String Image;
-    private int kilometraje;
+    private int Kilometraje;
     private String Marca;
 
     public int getIdCoche() {
@@ -60,11 +65,11 @@ public class CarModel {
     }
 
     public int getKilometraje() {
-        return kilometraje;
+        return Kilometraje;
     }
 
     public void setKilometraje(int kilometraje) {
-        this.kilometraje = kilometraje;
+        this.Kilometraje = kilometraje;
     }
 
     public String getMarca() {
