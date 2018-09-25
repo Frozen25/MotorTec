@@ -1,0 +1,9 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertUbicacion`(
+IN DISTRICT INT,
+IN DESCRIPTION VARCHAR(100)
+)
+BEGIN
+    
+    INSERT INTO Ubicacion VALUES((SELECT MAX(idUbicacion) + 1 FROM Ubicacion id), DESCRIPTION, DISTRICT);
+	
+END
