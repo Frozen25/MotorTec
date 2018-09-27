@@ -41,7 +41,8 @@ CREATE TABLE `Concesionario` (
 
 LOCK TABLES `Concesionario` WRITE;
 /*!40000 ALTER TABLE `Concesionario` DISABLE KEYS */;
-INSERT INTO `Concesionario` VALUES (1,'CartagoMotors',1,1),(2,'CostaRicaMotors',2,2);
+INSERT INTO `Concesionario` VALUES (1,'CartagoMotors',1,1),
+									(2,'CostaRicaMotors',2,2);
 /*!40000 ALTER TABLE `Concesionario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
