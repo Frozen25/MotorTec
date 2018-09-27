@@ -103,15 +103,15 @@ INSERT INTO `Carro` (Matricula, Modelo, Color, Kilometraje, Concesionario_idConc
                             ('AAA049', 'Rooster', 'Negro', 25742, 2, 3, 3, 13),
                             ('AAA050', 'Rooster', 'Negro', 46824, 2, 3, 3, 13),
 
-                            ('AAA051', 'Santa Fe', 'Negro', 62751, 1, 1, 1, 14),
+                            ('AAA051', 'Santa Fe', 'Negro', 62751, 1, 1, 1, NULL),
                             ('AAA052', 'Civic', 'Negro', 84743, 1, 2, 2, 14),
-                            ('AAA053', 'Santa Fe', 'Negro', 12474, 1, 1, 1, 14),
+                            ('AAA053', 'Santa Fe', 'Negro', 12474, 1, 1, 1, NULL),
                             ('AAA054', 'Civic', 'Negro', 99880, 1, 2, 2, 14),
-                            ('AAA055', 'Santa Fe', 'Negro', 56285, 1, 1, 1, 14),
+                            ('AAA055', 'Santa Fe', 'Negro', 56285, 1, 1, 1, NULL),
                             ('AAA056', 'Civic', 'Negro', 12743, 2, 2, 2, 14),
-                            ('AAA057', 'Santa Fe', 'Negro', 92821, 2, 1, 1, 14),
+                            ('AAA057', 'Santa Fe', 'Negro', 92821, 2, 1, 1, NULL),
                             ('AAA058', 'Civic', 'Negro', 14235, 2, 2, 2, 14),
-                            ('AAA059', 'Santa Fe', 'Negro', 25742, 2, 1, 1, 14),
+                            ('AAA059', 'Santa Fe', 'Negro', 25742, 2, 1, 1, NULL),
                             ('AAA060', 'Civic', 'Negro', 46824, 2, 2, 2, 14);
 /*!40000 ALTER TABLE `Carro` ENABLE KEYS */;
 UNLOCK TABLES;
