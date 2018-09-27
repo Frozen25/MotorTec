@@ -15,6 +15,7 @@ public class CarModel {
     private String Image;
     private int Kilometraje;
     private String Marca;
+    private String Concesionario;
 
     public int getIdCarro() {
         return idCarro;
@@ -78,5 +79,13 @@ public class CarModel {
 
     public void setMarca(String marca) {
         Marca = marca;
+    }
+
+    public String getConcesionario() {
+        return Concesionario;
+    }
+
+    public void setConcesionario(String concesionario) {
+        Concesionario = concesionario;
     }
 }

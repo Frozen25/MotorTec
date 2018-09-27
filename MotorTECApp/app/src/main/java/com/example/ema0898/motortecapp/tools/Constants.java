@@ -13,14 +13,17 @@ public class Constants {
     public static final String districtRoute = ip + "/location/district/";
     public static final String addClient = ip + "/customer/add";
     public static final String getConcessionaire = ip + "/coche/cs";
+    public static final String addSell = ip + "/transaction/sell";
 
     // keys para pasar informacion entre activities
     public static final String newCarBundleString = "car_id";
-    public static final String registerBundleName = "client_name";
 
+    public static final String registerBundleName = "client_name";
     public static final String registerBundleLastName = "client_lastname";
     public static final String registerBundlePhone = "client_phone";
     public static final String registerBundleID = "client_id";
+    public static final String registerBundleEmail = "client_email";
+
 
     // Llaves de búsqueda para los archivos de las shared preferences
     public static final String sharedPreferencesClientNameFile = "client_name";
