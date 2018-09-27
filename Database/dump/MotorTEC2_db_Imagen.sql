@@ -38,7 +38,15 @@ CREATE TABLE `Imagen` (
 
 LOCK TABLES `Imagen` WRITE;
 /*!40000 ALTER TABLE `Imagen` DISABLE KEYS */;
-INSERT INTO `Imagen` VALUES (1,'http://www.hyundaicr.com/images/modelos-menu-nav/Elantra-thumb.png',1),(2,'http://www.hyundaicr.com/images/modelos-menu-nav/Elantra-thumb.png',2),(3,'http://www.hyundaicr.com/images/modelos-menu-nav/Tucson-thumb.png',3),(4,'http://www.hyundaicr.com/images/modelos-menu-nav/Tucson-thumb.png',4),(5,'http://www.hyundaicr.com/images/modelos/elantra/elementos/elantra-design-right-side-front-view-blue-original.jpg',1),(6,'http://www.hyundaicr.com/images/modelos/elantra/elementos/elantra-design-right-side-front-view-blue-original.jpg',2),(7,'http://www.hyundaicr.com/images/modelos-menu-nav/SantaFe-thumb.png',5);
+INSERT INTO `Imagen` VALUES 
+	(1,'http://www.hyundaicr.com/images/modelos-menu-nav/Elantra-thumb.png',1),
+	(2,'http://www.hyundaicr.com/images/modelos-menu-nav/Elantra-thumb.png',2),
+	(3,'http://www.hyundaicr.com/images/modelos-menu-nav/Tucson-thumb.png',3),
+	(4,'http://www.hyundaicr.com/images/modelos-menu-nav/Tucson-thumb.png',4),
+	(5,'http://www.hyundaicr.com/images/modelos/elantra/elementos/elantra-design-right-side-front-view-blue-original.jpg',1),
+	(6,'http://www.hyundaicr.com/images/modelos/elantra/elementos/elantra-design-right-side-front-view-blue-original.jpg',2),
+	(7,'http://www.hyundaicr.com/images/modelos-menu-nav/SantaFe-thumb.png',5)
+	;
 /*!40000 ALTER TABLE `Imagen` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -38,7 +38,10 @@ CREATE TABLE `Taller` (
 
 LOCK TABLES `Taller` WRITE;
 /*!40000 ALTER TABLE `Taller` DISABLE KEYS */;
-INSERT INTO `Taller` VALUES (1,'Taller Gomez',1),(2,'Taller Piedra',2);
+INSERT INTO `Taller` VALUES 
+	(1,'Taller Gomez',1),
+	(2,'Taller Piedra',2)
+	;
 /*!40000 ALTER TABLE `Taller` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
