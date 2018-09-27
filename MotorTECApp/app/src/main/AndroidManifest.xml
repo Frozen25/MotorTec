@@ -32,7 +32,8 @@
         <activity android:name=".Register2Activity" />
         <activity android:name=".CsActivity" />
         <activity android:name=".UserCarActivity" />
-        <activity android:name=".BuyActivity"></activity>
+        <activity android:name=".BuyActivity" />
+        <activity android:name=".LogIn"></activity>
     </application>
 
 </manifest>

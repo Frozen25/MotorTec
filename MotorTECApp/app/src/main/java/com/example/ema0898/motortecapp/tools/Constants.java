@@ -16,6 +16,7 @@ public class Constants {
     public static final String addSell = ip + "/transaction/sell";
     public static final String addBuy = ip + "/transaction/buy";
     public static final String getCarByUser = ip + "/coche/usuario/";
+    public static final String getClientById = ip + "/customer/get/";
 
     // keys para pasar informacion entre activities
     public static final String newCarBundleString = "car_id";
@@ -40,4 +41,6 @@ public class Constants {
     public static final String cantonNameKey = "Nombre";
     public static final String provinceNameKey = "Nombre";
     public static final String concessionaireNameKey = "Nombre";
+
+    public static final String clientNameKey = "Nombre";
 }

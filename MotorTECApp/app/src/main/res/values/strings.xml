@@ -47,4 +47,9 @@
     <string name="BuyAActivityEditTextMatricula">Ingrese el precio</string>
     <string name="BuyActivityOK">Compra realizada con éxito</string>
     <string name="BuyActivityConnectionError">Error en la conexión, intenelo de nuevo</string>
+    <string name="LogInActivityMsg">Ingrese la cédula del cliente a buscar</string>
+    <string name="LogInActivityEditTextHint">Cédula</string>
+    <string name="LogInActivityBtn">Buscar cliente</string>
+    <string name="LogInActivityOk">Cliente encontrado y cambiado</string>
+    <string name="LogInActivityConnectionError">Cliente no encontrado, intenelo de nuevo</string>
 </resources>

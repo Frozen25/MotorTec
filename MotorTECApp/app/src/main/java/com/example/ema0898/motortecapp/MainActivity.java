@@ -1,10 +1,12 @@
 package com.example.ema0898.motortecapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -31,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     boolean pressedTwice;
 
     public static String csName;
+
+    String[] items = { "Registrar usuario", "Obtener usuario" };
+
+    private int selection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(MainActivity.this, Register1Activity.class);
-            startActivity(intent);
+            openDialog();
         }
 
         if (id == R.id.action_get_all_car) {
@@ -139,6 +144,39 @@ public class MainActivity extends AppCompatActivity {
         String usuario = preferences.getString(Constants.sharedPreferencedCsName, "Empty");
 
         return usuario;
+    }
+
+    private void openDialog() {
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        selection = 0;
+                        break;
+                    case 1:
+                        selection = 1;
+                        break;
+                }
+            }
+        });
+        builder.setPositiveButton(R.string.fragmentDialogOk, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (selection == 0) {
+                    Intent intent = new Intent(MainActivity.this, Register1Activity.class);
+                    startActivity(intent);
+                } else if (selection == 1) {
+                    Intent intent = new Intent(MainActivity.this, LogIn.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        builder.create();
+        builder.show();
     }
 }
 

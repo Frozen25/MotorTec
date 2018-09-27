@@ -63,7 +63,7 @@ INSERT INTO Persona (Cedula, Nombre, Apellido, Ubicacion_idUbicacion ) VALUES
   ( 681836723, 'Neely', 'Roark', 2),
   ( 605275203, 'Crysta', 'Wentland', 2),
   ( 683336700, 'Mayuri', 'Shiina', 1),
-  ( 606675200, 'Kuristina', 'Makise', 2)
+  ( 606675200, 'Kurisutina', 'Makise', 2)
   ;
 
 /*!40000 ALTER TABLE `Persona` ENABLE KEYS */;
