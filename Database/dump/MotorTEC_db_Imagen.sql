@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `Imagen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Imagen` (
-  `idImagen` int(11) NOT NULL,
+  `idImagen` int(11) NOT NULL AUTO_INCREMENT,
   `Link` varchar(256) NOT NULL,
   `Carro_idCarro` int(11) NOT NULL,
   PRIMARY KEY (`idImagen`),
