@@ -23,7 +23,7 @@ app.use(myConnection(mysql, {
 	user: 'root',
 	password: '',
 	port: 3306,
-	database: 'MotorTEC2_db',
+	database: 'MotorTEC3_db',
 	multipleStatments: true
 }, 'single'));
 app.use(express.urlencoded({extended: false}));

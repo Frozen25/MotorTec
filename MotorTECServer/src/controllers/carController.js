@@ -52,6 +52,20 @@ controller.getCs = (request, response) => {
 	});
 };
 
+controller.getCarByUser = (request, response) => {
+	request.getConnection((err, connection) => {		
+		// Get an employee
+		const id = request.params.id;
+		connection.query('CALL getCarByUser(?);', [id], (err, rows, fields) => {
+			if (err) {
+				console.log(err);
+			}
+			response.send(rows);
+		});	
+	});
+
+};
+
 /*
 var post  = {id: 1, title: 'Hello MySQL'};
 var query = connection.query('INSERT INTO posts SET ?', post, function(err, result) {

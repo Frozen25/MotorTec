@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/coche/new/:id', customerController.getNew);
 router.get('/coche/used/:id', customerController.getUsed);
 router.get('/coche/cs', customerController.getCs);
+router.get('/coche/usuario/:id', customerController.getCarByUser);
 router.get('/coche/:id', customerController.getOne);
 
 ///

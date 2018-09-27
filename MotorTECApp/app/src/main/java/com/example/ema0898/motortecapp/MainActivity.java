@@ -94,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if (id == R.id.action_get_all_car) {
+            Intent intent = new Intent(MainActivity.this, UserCarActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

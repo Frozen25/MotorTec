@@ -15,7 +15,7 @@
         app:showAsAction="never" />
     <item
         android:icon="@drawable/ic_directions_car_black_24dp"
-        android:id="@+id/action_add_car"
+        android:id="@+id/action_get_all_car"
         android:orderInCategory="300"
         android:title="@string/add_car"
         app:showAsAction="ifRoom" />
