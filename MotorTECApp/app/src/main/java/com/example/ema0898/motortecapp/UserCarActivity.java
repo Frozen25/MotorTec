@@ -1,5 +1,6 @@
 package com.example.ema0898.motortecapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -33,9 +34,12 @@ public class UserCarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_car);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
         get = new Get();
 
-        new JSONTask().execute(Constants.getCarByUser + getClientName());
+        new JSONTask().execute(Constants.getCarByUser + getClientName() + "/" + bundle.get(Constants.userCarCs));
 
         listView = findViewById(R.id.lvUserCar);
 

@@ -95,7 +95,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_get_all_car) {
+            Bundle bundle = new Bundle();
+            bundle.putString(Constants.userCarCs, csName);
             Intent intent = new Intent(MainActivity.this, UserCarActivity.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
 

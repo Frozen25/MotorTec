@@ -25,6 +25,8 @@ public class Constants {
     public static final String registerBundleID = "client_id";
     public static final String registerBundleEmail = "client_email";
 
+    public static final String userCarCs = "cliente_cs";
+
 
     // Llaves de búsqueda para los archivos de las shared preferences
     public static final String sharedPreferencesClientNameFile = "client_name";
