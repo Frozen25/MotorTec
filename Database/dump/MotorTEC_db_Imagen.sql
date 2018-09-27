@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `Imagen`;
 CREATE TABLE `Imagen` (
   `idImagen` int(11) NOT NULL,
   `Link` varchar(256) NOT NULL,
-  `Carro_idCarro` int(11) DEFAULT NULL,
+  `Carro_idCarro` int(11) NOT NULL,
   PRIMARY KEY (`idImagen`),
   KEY `fk_Imagen_Carro1_idx` (`Carro_idCarro`),
   CONSTRAINT `fk_Imagen_Carro1` FOREIGN KEY (`Carro_idCarro`) REFERENCES `Carro` (`idCarro`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -39,7 +39,6 @@ CREATE TABLE `Imagen` (
 LOCK TABLES `Imagen` WRITE;
 /*!40000 ALTER TABLE `Imagen` DISABLE KEYS */;
 INSERT INTO `Imagen` VALUES 
-	(NULL, 'https://st2.depositphotos.com/5266903/8595/v/950/depositphotos_85958906-stock-illustration-spanner-and-screwdriver-icon.jpg' ),
 	(1,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/hero/se/2018-santa-fe-se-base-becketts-black.jpg',51),
 	(2,'https://www.motorbeam.com/wp-content/uploads/Hyundai-Santa-Fe-Black.jpg',51),
 	(3,'https://i.ytimg.com/vi/RJF25gXm0ag/maxresdefault.jpg',51),
@@ -63,23 +62,7 @@ INSERT INTO `Imagen` VALUES
 	(17,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/hero/se/2018-santa-fe-se-base-becketts-black.jpg',59),
 	(18,'https://www.motorbeam.com/wp-content/uploads/Hyundai-Santa-Fe-Black.jpg',59),
 	(19,'https://i.ytimg.com/vi/RJF25gXm0ag/maxresdefault.jpg',59),
-	(20,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/interior-hero/2018-santa-fe-ang-3-se-ult-black.jpg',59),
-	
-
-	(21,'http://crautos.com/clasificados/usados/99535498-1.jpg',52),
-	(22,'http://crautos.com/clasificados/usados/99535498-2.jpg',52),
-
-	(23,'http://crautos.com/clasificados/usados/98004085-3.jpg',54),
-	(24,'http://crautos.com/clasificados/usados/98004085-2.jpg',54),
-
-	(25,'http://crautos.com/clasificados/usados/45741453-2.jpg',56),
-	(26,'http://crautos.com/clasificados/usados/45741453-1.jpg',56),
-
-	(27,'http://crautos.com/clasificados/usados/60747881-1.jpg',58),
-	(28,'http://crautos.com/clasificados/usados/60747881-2.jpg',58),
-
-	(29,'http://crautos.com/clasificados/usados/23634696-1.jpg',60),
-	(30,'http://crautos.com/clasificados/usados/23634696-2.jpg',60)
+	(20,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/interior-hero/2018-santa-fe-ang-3-se-ult-black.jpg',59)
 	;
 /*!40000 ALTER TABLE `Imagen` ENABLE KEYS */;
 UNLOCK TABLES;

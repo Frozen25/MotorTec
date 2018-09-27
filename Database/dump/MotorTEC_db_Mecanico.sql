@@ -26,7 +26,6 @@ CREATE TABLE `Mecanico` (
   `idMecanico` int(11) NOT NULL AUTO_INCREMENT,
   `Salario` int(11) NOT NULL,
   `Fecha_Contratacion` date NOT NULL,
-  `Puesto` varchar(45) NOT NULL,
   `Taller_idTaller` int(11) NOT NULL,
   `Persona_idPersona` int(11) NOT NULL,
   PRIMARY KEY (`idMecanico`),

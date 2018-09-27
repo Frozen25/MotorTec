@@ -24,7 +24,8 @@ DROP TABLE IF EXISTS `Reparacion`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Reparacion` (
   `idReparacion` int(11) NOT NULL AUTO_INCREMENT,
-  `Coche_idCoche` int(11) NOT NULL,
+  `Carro_idCarro` int(11) NOT NULL,
+  `Taller_idTaller` int(11) NOT NULL,
   PRIMARY KEY (`idReparacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,7 +36,7 @@ CREATE TABLE `Reparacion` (
 
 LOCK TABLES `Reparacion` WRITE;
 /*!40000 ALTER TABLE `Reparacion` DISABLE KEYS */;
-INSERT INTO `Reparacion` (idReparacion,Carro_idCarro, Taller_idTaller) VALUES 
+INSERT INTO `Reparacion` (idReparacion, Carro_idCarro, Taller_idTaller) VALUES 
 	(1, 1,1),
 	(2, 2,1),
 	(3, 3,1),
