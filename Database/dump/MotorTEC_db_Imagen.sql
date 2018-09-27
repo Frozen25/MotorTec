@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `Imagen`;
 CREATE TABLE `Imagen` (
   `idImagen` int(11) NOT NULL,
   `Link` varchar(256) NOT NULL,
-  `Carro_idCarro` int(11) NOT NULL,
+  `Carro_idCarro` int(11) DEFAULT NULL,
   PRIMARY KEY (`idImagen`),
   KEY `fk_Imagen_Carro1_idx` (`Carro_idCarro`),
   CONSTRAINT `fk_Imagen_Carro1` FOREIGN KEY (`Carro_idCarro`) REFERENCES `Carro` (`idCarro`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -39,6 +39,7 @@ CREATE TABLE `Imagen` (
 LOCK TABLES `Imagen` WRITE;
 /*!40000 ALTER TABLE `Imagen` DISABLE KEYS */;
 INSERT INTO `Imagen` VALUES 
+	(NULL, 'https://st2.depositphotos.com/5266903/8595/v/950/depositphotos_85958906-stock-illustration-spanner-and-screwdriver-icon.jpg' ),
 	(1,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/hero/se/2018-santa-fe-se-base-becketts-black.jpg',51),
 	(2,'https://www.motorbeam.com/wp-content/uploads/Hyundai-Santa-Fe-Black.jpg',51),
 	(3,'https://i.ytimg.com/vi/RJF25gXm0ag/maxresdefault.jpg',51),

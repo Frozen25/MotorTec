@@ -3,6 +3,7 @@ IN _nombreConcesionaria VARCHAR(45)
 IN _idCarro INT
 IN _monto INT
 IN _fecha DATETIME
+IN _link VARCHAR(256)
 
 )
 BEGIN
@@ -13,17 +14,20 @@ BEGIN
 			WHERE Concesionario.Nombre = _nombreConcesionaria), _idCarro);
 
 	UPDATE Carro 
-SET 
-    Estado_idEstado = 2,
-    Cliente_idCliente = NULL,
-    Concesionario_idConcesionario = (SELECT 
-            idConcesionario
-        FROM
-            Concesionario
+        SET 
+            Estado_idEstado = 2,
+            Cliente_idCliente = NULL,
+            Concesionario_idConcesionario = (SELECT 
+                    idConcesionario
+                FROM
+                    Concesionario
+                WHERE
+                    Concesionario.Nombre = _nombreConcesionaria)
         WHERE
-            Concesionario.Nombre = _nombreConcesionaria)
-WHERE
-    Carro.idCarro = _idCarro;	
+            Carro.idCarro = _idCarro;	
+
+    INSERT INTO Image ( Link , Carro_idCarro ) VALUES
+        (_link, _idCarro);
 
 
 END
