@@ -62,6 +62,18 @@
         android:paddingTop="10dp"
         android:textColorHighlight="@android:color/holo_blue_dark" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvRegisterActivityEmail"
+        android:paddingTop="10dp"/>
+
+    <EditText
+        android:id="@+id/edEmail"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"/>
+
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"

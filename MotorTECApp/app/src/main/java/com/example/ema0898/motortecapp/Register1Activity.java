@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.ema0898.motortecapp.tools.Constants;
 
@@ -18,12 +19,14 @@ public class Register1Activity extends AppCompatActivity {
     private EditText etLastName;
     private EditText etID;
     private EditText etPhone;
+    private EditText etEmail;
     private Button btnSubmit;
 
     boolean nameOK;
     boolean lastNameOK;
     boolean idOK;
     boolean phoneOK;
+    boolean emailOK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +37,13 @@ public class Register1Activity extends AppCompatActivity {
         lastNameOK = false;
         idOK = false;
         phoneOK = false;
+        emailOK = false;
 
         etName = findViewById(R.id.edName);
         etLastName = findViewById(R.id.edLastName);
         etID = findViewById(R.id.edID);
         etPhone = findViewById(R.id.edPhone);
+        etEmail = findViewById(R.id.edEmail);
         btnSubmit = findViewById(R.id.btnSubmit);
 
         // Revisa que todos los campos estén llenos y que la cédula y el telefono sean enteros
@@ -84,15 +89,30 @@ public class Register1Activity extends AppCompatActivity {
                     phoneOK = true;
                 }
 
+                if (etEmail.getText().toString().isEmpty()) {
+                    etEmail.setError("Debe ingresar su correo electrónico");
+                    emailOK = false;
+                } else {
+                    emailOK = true;
+                }
+
+                if (!isEmailValid(etEmail.getText().toString())) {
+                    etEmail.setError("Ingrese un email con formato válido");
+                    emailOK = false;
+                } else {
+                    emailOK = true;
+                }
+
                 // Si se cumplen las condiciones, envia la informacion de los edittext a la siguiente activity
                 // de registro
-                if (nameOK && lastNameOK && idOK && phoneOK) {
+                if (nameOK && lastNameOK && idOK && phoneOK && emailOK) {
                     Bundle bundle = new Bundle();
 
                     bundle.putString(Constants.registerBundleName, etName.getText().toString());
                     bundle.putString(Constants.registerBundleLastName, etLastName.getText().toString());
                     bundle.putInt(Constants.registerBundleID, Integer.parseInt(etID.getText().toString()));
                     bundle.putInt(Constants.registerBundlePhone, Integer.parseInt(etPhone.getText().toString()));
+                    bundle.putString(Constants.registerBundleEmail, etEmail.getText().toString());
 
                     Intent intent = new Intent(Register1Activity.this, Register2Activity.class);
                     intent.putExtras(bundle);
@@ -101,6 +121,10 @@ public class Register1Activity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
     @Override
