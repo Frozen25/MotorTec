@@ -3,9 +3,10 @@ package com.example.ema0898.motortecapp.tools;
 public class Constants {
 
     // Rutas del servidor para obtener diversas cosas
-    private static final String ip = "http://192.168.43.70:3000";
+    private static final String ip = "http://172.19.49.247:3000";
     public static final String newCarsRoute = ip + "/coche/new";
     public static final String usedCarRoute = ip + "/coche/used";
+    public static final String getCar = ip + "/coche";
     public static final String countryRoute = ip + "/location/country";
     public static final String provinceRoute = ip + "/location/province/";
     public static final String cantonRoute = ip + "/location/canton/";

@@ -7,7 +7,7 @@ package com.example.ema0898.motortecapp.models;
  */
 public class CarModel {
 
-    private int idCoche;
+    private int idCarro;
     private String Matricula;
     private String Modelo;
     private String Color;
@@ -16,12 +16,12 @@ public class CarModel {
     private int Kilometraje;
     private String Marca;
 
-    public int getIdCoche() {
-        return idCoche;
+    public int getIdCarro() {
+        return idCarro;
     }
 
-    public void setIdCoche(int idCoche) {
-        this.idCoche = idCoche;
+    public void setIdCarro(int idCoche) {
+        this.idCarro = idCoche;
     }
 
     public String getMatricula() {

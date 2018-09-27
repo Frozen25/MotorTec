@@ -12,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.ema0898.motortecapp.MainActivity;
 import com.example.ema0898.motortecapp.PurchaseActivity;
@@ -65,7 +64,7 @@ public class NewCar extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle b = new Bundle();
-                b.putInt(Constants.newCarBundleString, cars.get(position).getIdCoche());
+                b.putInt(Constants.newCarBundleString, cars.get(position).getIdCarro());
 
                 Intent intent = new Intent(getActivity(), PurchaseActivity.class);
                 intent.putExtras(b);
@@ -196,10 +195,6 @@ public class NewCar extends Fragment {
             for (int i = 0; i < items.length; ++i) {
                 items[i] = result.get(i);
             }
-
-            //System.out.print("");
-            //openDialog();
-            //new JSONTask().execute(Constants.newCarsRoute + "/" + items[0]);
         }
     }
 }

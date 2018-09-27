@@ -4,7 +4,7 @@
     <string name="tab_text_2">Autos Usados</string>
     <string name="action_change_concessionaire">Cambiar concesionario</string>
     <string name="fragmentDialog">Seleccione el concesionario</string>
-    <string name="fragmentDialogOk">Ok</string>
+    <string name="fragmentDialogOk">OK</string>
     <string name="action_change_user">Cambiar usuario</string>
     <string name="add_car">Nuevo Auto</string>
     <string name="connect_error">No tienes conexión a internet</string>
@@ -26,4 +26,14 @@
     <string name="tvCs">Seleccione el concesionario</string>
     <string name="btnCs">Continuar</string>
     <string name="CsActivityError">Debe seleccionar un concesionario</string>
+    <string name="PurchaseActivityLogInMsg">Necesita registrarse</string>
+    <string name="PurchaseActivityMatricula">Matricula: </string>
+    <string name="PurchaseActivityModelo">Modelo: </string>
+    <string name="PurchaseActivityColor">Color: </string>
+    <string name="PurchaseActivityKilometraje">Kilometraje: </string>
+    <string name="PurchaseActivityMarca">Marca: </string>
+    <string name="PurchaseActivityEditTextHint">Ingrese el precio final</string>
+    <string name="PurchaseActivityBuy">Comprar</string>
+    <string name="PurchaseActivitySendBuy">Confirmar Comprar</string>
+    <string name="PurchaseActivityNotMatricula">Sin registrar</string>
 </resources>

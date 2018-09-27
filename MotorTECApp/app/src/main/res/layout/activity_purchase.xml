@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PurchaseActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/prViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp">
+
+    </android.support.v4.view.ViewPager>
+
+    <TextView
+        android:id="@+id/tvPrMatricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityMatricula"
+        android:layout_below="@id/prViewPager"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvPrModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityModelo"
+        android:layout_below="@id/tvPrMatricula"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvPrColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityColor"
+        android:layout_below="@id/tvPrModelo"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvPrKilometraje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityKilometraje"
+        android:layout_below="@id/tvPrColor"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvPrMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityMarca"
+        android:layout_below="@id/tvPrKilometraje"
+        android:paddingTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnPrBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="141dp"
+        android:paddingBottom="15dp"
+        android:text="@string/PurchaseActivityBuy" />
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="82dp"
+        android:ems="10"
+        android:hint="@string/PurchaseActivityEditTextHint"
+        android:inputType="number"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btnSendPurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp"
+        android:text="@string/PurchaseActivitySendBuy"
+        android:visibility="invisible" />
+
+</RelativeLayout>

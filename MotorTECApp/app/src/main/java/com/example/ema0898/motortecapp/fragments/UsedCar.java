@@ -1,6 +1,7 @@
 package com.example.ema0898.motortecapp.fragments;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.ema0898.motortecapp.MainActivity;
+import com.example.ema0898.motortecapp.PurchaseActivity;
 import com.example.ema0898.motortecapp.R;
 import com.example.ema0898.motortecapp.adapter.CustomAdapter;
 import com.example.ema0898.motortecapp.connections.Get;
@@ -64,7 +64,13 @@ public class UsedCar extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(UsedCar.this.getContext(), cars.get(position).getIdCoche() + "", Toast.LENGTH_SHORT).show();
+                Bundle b = new Bundle();
+                b.putInt(Constants.newCarBundleString, cars.get(position).getIdCarro());
+
+                Intent intent = new Intent(getActivity(), PurchaseActivity.class);
+                intent.putExtras(b);
+                startActivity(intent);
+
             }
         });
 
