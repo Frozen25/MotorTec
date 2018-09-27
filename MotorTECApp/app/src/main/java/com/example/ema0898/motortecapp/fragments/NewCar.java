@@ -98,9 +98,11 @@ public class NewCar extends Fragment {
                 switch (which) {
                     case 0:
                         selection = items[0];
+                        MainActivity.csName = items[0];
                         break;
                     case 1:
                         selection = items[1];
+                        MainActivity.csName = items[1];
                         break;
                 }
             }

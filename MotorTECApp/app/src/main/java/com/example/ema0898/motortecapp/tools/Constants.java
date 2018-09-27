@@ -3,7 +3,7 @@ package com.example.ema0898.motortecapp.tools;
 public class Constants {
 
     // Rutas del servidor para obtener diversas cosas
-    private static final String ip = "http://192.168.43.154:3000";
+    private static final String ip = "http://192.168.100.16:3000";
     public static final String newCarsRoute = ip + "/coche/new";
     public static final String usedCarRoute = ip + "/coche/used";
     public static final String getCar = ip + "/coche";
@@ -14,6 +14,7 @@ public class Constants {
     public static final String addClient = ip + "/customer/add";
     public static final String getConcessionaire = ip + "/coche/cs";
     public static final String addSell = ip + "/transaction/sell";
+    public static final String addBuy = ip + "/transaction/buy";
     public static final String getCarByUser = ip + "/coche/usuario/";
 
     // keys para pasar informacion entre activities
@@ -27,6 +28,7 @@ public class Constants {
 
     public static final String userCarCs = "cliente_cs";
 
+    public static final String buyId = "car_buyId";
 
     // Llaves de búsqueda para los archivos de las shared preferences
     public static final String sharedPreferencesClientNameFile = "client_name";

@@ -8,16 +8,22 @@ IN _fecha DATETIME
 BEGIN
 	INSERT INTO Factura (Monto , Compra, Fecha, Concesionario_idConcesionario,  Carro_idCarro) 
 		VALUES ( _monto , 1, _fecha, 
-			SELECT idConcesionario 
+			(SELECT idConcesionario 
 			FROM Concesionario
-			WHERE Concesionario.Nombre = _nombreConcesionaria)
-		, _idCarro);
+			WHERE Concesionario.Nombre = _nombreConcesionaria), _idCarro);
 
 	UPDATE Carro 
-		SET Estado = 2 
-		WHERE Carro.idCarro = _idCarro;
-
-	
+SET 
+    Estado_idEstado = 2,
+    Cliente_idCliente = NULL,
+    Concesionario_idConcesionario = (SELECT 
+            idConcesionario
+        FROM
+            Concesionario
+        WHERE
+            Concesionario.Nombre = _nombreConcesionaria)
+WHERE
+    Carro.idCarro = _idCarro;	
 
 
 END

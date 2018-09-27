@@ -35,19 +35,22 @@ public class UserCarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_car);
 
         Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
+        final Bundle bundle = intent.getExtras();
 
         get = new Get();
 
-        new JSONTask().execute(Constants.getCarByUser + getClientName() + "/" + bundle.get(Constants.userCarCs));
+        new JSONTask().execute(Constants.getCarByUser + getClientName() + "/" + bundle.getString(Constants.userCarCs));
 
         listView = findViewById(R.id.lvUserCar);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(), cars.get(position).getIdCarro() + "", Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), cars.get(position).getConcesionario() + "", Toast.LENGTH_SHORT).show();
+                Bundle bundle1 = new Bundle();
+                bundle1.putInt(Constants.buyId, cars.get(position).getIdCarro());
+                Intent intent1 = new Intent(UserCarActivity.this, BuyActivity.class);
+                intent1.putExtras(bundle1);
+                startActivity(intent1);
             }
         });
     }

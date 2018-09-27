@@ -56,7 +56,8 @@ controller.getCarByUser = (request, response) => {
 	request.getConnection((err, connection) => {		
 		// Get an employee
 		const id = request.params.id;
-		connection.query('CALL getCarByUser(?);', [id], (err, rows, fields) => {
+		const cs = request.params.cs;
+		connection.query('CALL getCarByUser(?, ?);', [id, cs], (err, rows, fields) => {
 			if (err) {
 				console.log(err);
 			}

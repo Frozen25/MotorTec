@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BuyActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvBuyMatricula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityMatricula"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvBuyModelo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityModelo"
+        android:layout_below="@id/tvBuyMatricula"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvBuyColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityColor"
+        android:layout_below="@id/tvBuyModelo"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvBuyKilometraje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityKilometraje"
+        android:layout_below="@id/tvBuyColor"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvBuyMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PurchaseActivityMarca"
+        android:layout_below="@id/tvBuyKilometraje"
+        android:paddingTop="15dp"/>
+
+    <TextView
+        android:id="@+id/tvBuySpinnerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBuyMarca"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:paddingTop="15dp"
+        android:text="@string/BuyActivitySpinnerTextView" />
+
+    <Button
+        android:id="@+id/btnSendBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:paddingBottom="15dp"
+        android:text="@string/BuyActivityButton" />
+
+    <Spinner
+        android:id="@+id/spBuy"
+        android:layout_width="228dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnSendBuy"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginBottom="36dp" />
+
+    <EditText
+        android:id="@+id/etBuyPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBuyMarca"
+        android:hint="@string/BuyAActivityEditTextPrice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:inputType="number"/>
+
+
+</RelativeLayout>

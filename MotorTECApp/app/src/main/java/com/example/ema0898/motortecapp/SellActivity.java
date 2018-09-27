@@ -91,6 +91,8 @@ public class SellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (etPrice.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), R.string.SellActivityErrorPrice, Toast.LENGTH_SHORT).show();
+                } else if (!android.text.TextUtils.isDigitsOnly(etPrice.getText().toString()))  {
+                    Toast.makeText(getApplicationContext(), R.string.SellActivityPriceNumberError, Toast.LENGTH_SHORT).show();
                 } else {
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String currentDateandTime = sdf.format(new Date());
@@ -190,7 +192,6 @@ public class SellActivity extends AppCompatActivity {
                 Intent intent = new Intent(SellActivity.this, MainActivity.class);
                 startActivity(intent);
             } else {
-                Toast.makeText(SellActivity.this, R.string.SellActivityConnectionError, Toast.LENGTH_SHORT).show();
                 Toast.makeText(SellActivity.this, R.string.SellActivityOK, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(SellActivity.this, MainActivity.class);
                 startActivity(intent);

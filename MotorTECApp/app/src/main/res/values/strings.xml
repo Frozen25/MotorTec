@@ -38,6 +38,13 @@
     <string name="PurchaseActivitySendBuy">Confirmar Comprar</string>
     <string name="PurchaseActivityNotMatricula">Sin registrar</string>
     <string name="SellActivityErrorPrice">Debe ingresar un precio</string>
+    <string name="SellActivityPriceNumberError">Debe numero para el precio</string>
     <string name="SellActivityOK">Compra realizada con éxito</string>
-    <string name="SellActivityConnectionError">Compra realizada con éxito</string>
+    <string name="SellActivityConnectionError">Error en la conexión, intenelo de nuevo</string>
+    <string name="BuyActivitySpinnerTextView">Seleccione el concesionario</string>
+    <string name="BuyActivityButton">Vender</string>
+    <string name="BuyAActivityEditTextPrice">Ingrese el precio</string>
+    <string name="BuyAActivityEditTextMatricula">Ingrese el precio</string>
+    <string name="BuyActivityOK">Compra realizada con éxito</string>
+    <string name="BuyActivityConnectionError">Error en la conexión, intenelo de nuevo</string>
 </resources>
