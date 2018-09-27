@@ -1,11 +1,7 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getNewCar`(
-IN _NombreConcesionario VARCHAR(20)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getCarWithImages`(
+IN _idCarro INT
 )
 BEGIN
-
-	SET sql_mode = '';
-     SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
-
 SELECT 
     c.idCarro,
     c.Matricula,
@@ -14,7 +10,8 @@ SELECT
     c.Kilometraje,
     c.Estado_idEstado AS Estado,
     m.Nombre AS Marca,
-    i.Link AS Image
+    i.Link AS Image,
+    c.Concesionario_idConcesionario AS Concesionario
 FROM
     Carro c
         JOIN
@@ -26,8 +23,6 @@ FROM
         JOIN
     Imagen i ON i.Carro_idCarro = c.idCarro
 WHERE
-    cs.Nombre = _NombreConcesionario
-        AND e.idEstado = 1
-        AND c.Cliente_idCliente IS NULL
-GROUP BY c.Modelo , e.idEstado;
+    c.idCarro = _idCarro;
+
 END
