@@ -67,6 +67,21 @@ controller.getCarByUser = (request, response) => {
 
 };
 
+controller.getMarca = (request, response) => {
+	request.getConnection((err, connection) => {		
+		// Get an employee
+		const sql = 'SELECT Nombre FROM Marca';
+		connection.query(sql, (err, rows, fields) => {
+			if (err) {
+				console.log(err);
+			}
+			response.send(rows);
+		});	
+	});
+};
+
+
+
 /*
 var post  = {id: 1, title: 'Hello MySQL'};
 var query = connection.query('INSERT INTO posts SET ?', post, function(err, result) {
@@ -75,13 +90,19 @@ var query = connection.query('INSERT INTO posts SET ?', post, function(err, resu
 console.log(query.sql);*/
 
 controller.save = (request, response) => {
-	const sql = 'CALL AddCustomer(?, ?, ?)';
-	const name = request.body.name;
-	const address = request.body.address;
-	const phone = request.body.phone;
+	const sql = 'CALL addCAR(?, ?, ?, ?, ?, ?, ?, ?, ?)';
+	const matricula = request.body.matricula;
+	const modelo = request.body.modelo;
+	const color = request.body.color;
+	const kilometraje = request.body.kilometraje;
+	const csName = request.body.csname;
+	const marcaName = request.body.marcaname;
+	const link = request.body.link;
+	const price = request.body.price;
+	const date = request.body.date;
 
 	request.getConnection((err, connection) => {
-		connection.query(sql, [name, address, phone], (err, customer) => {
+		connection.query(sql, [matricula, modelo, color, kilometraje, marcaName, csName, link, price, date], (err, customer) => {
 			if (err) {
 				console.log(err);
 				response.send('Error');

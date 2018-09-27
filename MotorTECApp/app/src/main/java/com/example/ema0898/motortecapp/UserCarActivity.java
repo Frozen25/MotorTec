@@ -3,6 +3,7 @@ package com.example.ema0898.motortecapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,14 @@ public class UserCarActivity extends AppCompatActivity {
     private ArrayList<CarModel> cars;
     private ListView listView;
 
+    private FloatingActionButton floatingActionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_car);
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         final Bundle bundle = intent.getExtras();
 
         get = new Get();
@@ -42,6 +45,7 @@ public class UserCarActivity extends AppCompatActivity {
         new JSONTask().execute(Constants.getCarByUser + getClientName() + "/" + bundle.getString(Constants.userCarCs));
 
         listView = findViewById(R.id.lvUserCar);
+        floatingActionButton = findViewById(R.id.flbtnNewCar);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -50,6 +54,14 @@ public class UserCarActivity extends AppCompatActivity {
                 bundle1.putInt(Constants.buyId, cars.get(position).getIdCarro());
                 Intent intent1 = new Intent(UserCarActivity.this, BuyActivity.class);
                 intent1.putExtras(bundle1);
+                startActivity(intent1);
+            }
+        });
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(UserCarActivity.this, AddCarActivity.class);
                 startActivity(intent1);
             }
         });
