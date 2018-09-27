@@ -38,7 +38,10 @@ CREATE TABLE `Distrito` (
 
 LOCK TABLES `Distrito` WRITE;
 /*!40000 ALTER TABLE `Distrito` DISABLE KEYS */;
-INSERT INTO `Distrito` VALUES (1,'Oriental',1),(2,'Occidental',1);
+INSERT INTO `Distrito` VALUES 
+	(1,'Oriental',1),
+	(2,'Occidental',1)
+	;
 /*!40000 ALTER TABLE `Distrito` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

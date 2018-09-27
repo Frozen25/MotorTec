@@ -38,7 +38,10 @@ CREATE TABLE `Ubicacion` (
 
 LOCK TABLES `Ubicacion` WRITE;
 /*!40000 ALTER TABLE `Ubicacion` DISABLE KEYS */;
-INSERT INTO `Ubicacion` VALUES (1,'Ubicacion 1',1),(2,'Ubicacion 2',2);
+INSERT INTO `Ubicacion` VALUES 
+(1,'Ubicacion 1',1),
+(2,'Ubicacion 2',2)
+;
 /*!40000 ALTER TABLE `Ubicacion` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

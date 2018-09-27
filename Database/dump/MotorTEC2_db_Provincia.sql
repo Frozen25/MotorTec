@@ -38,7 +38,12 @@ CREATE TABLE `Provincia` (
 
 LOCK TABLES `Provincia` WRITE;
 /*!40000 ALTER TABLE `Provincia` DISABLE KEYS */;
-INSERT INTO `Provincia` VALUES (1,'SanJose',1),(2,'Alajuela',1),(3,'Cartago',1),(8,'NewYork',3);
+INSERT INTO `Provincia` VALUES 
+	(1,'SanJose',1),
+	(2,'Alajuela',1),
+	(3,'Cartago',1),
+	(8,'NewYork',3)
+	;
 /*!40000 ALTER TABLE `Provincia` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

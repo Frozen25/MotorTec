@@ -42,6 +42,30 @@ CREATE TABLE `Persona` (
 
 LOCK TABLES `Persona` WRITE;
 /*!40000 ALTER TABLE `Persona` DISABLE KEYS */;
+INSERT INTO Persona (Cedula, Nombre, Apellido, Ubicacion_idUbicacion ) VALUES 
+  ( 978311857, 'Hououin', 'Kyouma', 1),
+  ( 883372238, 'Oneida', 'Concannon', 2),
+  ( 651085524, 'Silvana', 'Amparan', 1),
+  ( 740439623, 'Jani', 'Schmautz', 2),
+  ( 705073854, 'Dion', 'Brixner', 1),
+  ( 658305348, 'Lisha', 'Snellenberger', 1),
+  ( 258700507, 'Renata', 'Viger', 2),
+  ( 382767179, 'Kiera', 'Piros', 1),
+  ( 304029809, 'Lezlie', 'Barkhurst', 1),
+  ( 572807875, 'Lien', 'Drivas', 2),
+  ( 676456755, 'Elmer', 'Alquijay', 2),
+  ( 146156797, 'Tommy', 'Mandahl', 1),
+  ( 987797211, 'Keith', 'Pezzulo', 2),
+  ( 779691542, 'Lonnie', 'Olives', 1),
+  ( 835737039, 'Donald', 'Mellage', 1),
+  ( 720450350, 'Kenneth', 'Mortimore', 1),
+  ( 429056694, 'Jenell', 'Nitka', 2),
+  ( 681836723, 'Neely', 'Roark', 2),
+  ( 605275203, 'Crysta', 'Wentland', 2),
+  ( 683336700, 'Mayuri', 'Shiina', 1),
+  ( 606675200, 'Kuristina', 'Makise', 2)
+  ;
+
 /*!40000 ALTER TABLE `Persona` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
