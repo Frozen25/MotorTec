@@ -63,7 +63,23 @@ INSERT INTO `Imagen` VALUES
 	(17,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/hero/se/2018-santa-fe-se-base-becketts-black.jpg',59),
 	(18,'https://www.motorbeam.com/wp-content/uploads/Hyundai-Santa-Fe-Black.jpg',59),
 	(19,'https://i.ytimg.com/vi/RJF25gXm0ag/maxresdefault.jpg',59),
-	(20,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/interior-hero/2018-santa-fe-ang-3-se-ult-black.jpg',59)
+	(20,'https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe/interior-hero/2018-santa-fe-ang-3-se-ult-black.jpg',59),
+	
+
+	(21,'http://crautos.com/clasificados/usados/99535498-1.jpg',52),
+	(22,'http://crautos.com/clasificados/usados/99535498-2.jpg',52),
+
+	(23,'http://crautos.com/clasificados/usados/98004085-3.jpg',54),
+	(24,'http://crautos.com/clasificados/usados/98004085-2.jpg',54),
+
+	(25,'http://crautos.com/clasificados/usados/45741453-2.jpg',56),
+	(26,'http://crautos.com/clasificados/usados/45741453-1.jpg',56),
+
+	(27,'http://crautos.com/clasificados/usados/60747881-1.jpg',58),
+	(28,'http://crautos.com/clasificados/usados/60747881-2.jpg',58),
+
+	(29,'http://crautos.com/clasificados/usados/23634696-1.jpg',60),
+	(30,'http://crautos.com/clasificados/usados/23634696-2.jpg',60)
 	;
 /*!40000 ALTER TABLE `Imagen` ENABLE KEYS */;
 UNLOCK TABLES;
