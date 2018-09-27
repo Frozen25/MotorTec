@@ -13,6 +13,7 @@
     <string name="tvRegisterActivityLastName">Ingrese sus apellidos</string>
     <string name="tvRegisterActivityId">Ingrese su cédula</string>
     <string name="tvRegisterActivityPhone">Ingrese su teléfono</string>
+    <string name="tvRegisterActivityEmail">Ingrese su correo electrónico</string>
     <string name="btnRegisterActivitySubmit">Continuar con su registro</string>
     <string name="tvRegister2ActivityCountry">Seleccione su país</string>
     <string name="tvRegister2ActivityProvince">Seleccione su provincia</string>
@@ -36,4 +37,7 @@
     <string name="PurchaseActivityBuy">Comprar</string>
     <string name="PurchaseActivitySendBuy">Confirmar Comprar</string>
     <string name="PurchaseActivityNotMatricula">Sin registrar</string>
+    <string name="SellActivityErrorPrice">Debe ingresar un precio</string>
+    <string name="SellActivityOK">Compra realizada con éxito</string>
+    <string name="SellActivityConnectionError">Compra realizada con éxito</string>
 </resources>

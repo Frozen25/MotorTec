@@ -7,7 +7,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.ema0898.motortecapp.adapter.ViewPagerAdapter;
 import com.example.ema0898.motortecapp.connections.Get;
-import com.example.ema0898.motortecapp.fragments.NewCar;
+import com.example.ema0898.motortecapp.connections.Post;
 import com.example.ema0898.motortecapp.models.CarModel;
 import com.example.ema0898.motortecapp.tools.Constants;
 import com.google.gson.Gson;
@@ -27,27 +26,33 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
-public class PurchaseActivity extends AppCompatActivity {
+public class SellActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TextView tvMatricula,  tvModelo, tvColor, tvKilometraje, tvMarca;
     private Button btnBuy, btnSendBuy;
     private EditText etPrice;
-    private Get get;
+
     private ArrayList<String> carImages;
     private CarModel car;
+
+    private Get get;
+    private Post post;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_purchase);
+        setContentView(R.layout.activity_sell);
 
         // Si el cliente ya se había registrado, hace la compra sino, lo envia a la activity de registro
         if(getClientName().equalsIgnoreCase("Empty")) {
             Toast.makeText(getApplicationContext(), R.string.PurchaseActivityLogInMsg, Toast.LENGTH_SHORT).show();
-            Intent intent1 = new Intent(PurchaseActivity.this, Register1Activity.class);
+            Intent intent1 = new Intent(SellActivity.this, Register1Activity.class);
             startActivity(intent1);
         }
 
@@ -55,6 +60,7 @@ public class PurchaseActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
 
         get = new Get();
+        post = new Post();
 
         viewPager = findViewById(R.id.prViewPager);
         tvMatricula = findViewById(R.id.tvPrMatricula);
@@ -77,6 +83,21 @@ public class PurchaseActivity extends AppCompatActivity {
             public void onClick(View v) {
                 btnSendBuy.setVisibility(View.VISIBLE);
                 etPrice.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnSendBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (etPrice.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), R.string.SellActivityErrorPrice, Toast.LENGTH_SHORT).show();
+                } else {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    String currentDateandTime = sdf.format(new Date());
+
+                    new HTTPAsyncTask().execute(Constants.addSell, etPrice.getText().toString(), currentDateandTime,
+                    String.valueOf(car.getIdCarro()), String.valueOf(car.getConcesionario()), getClientName());
+                }
             }
         });
 
@@ -137,10 +158,43 @@ public class PurchaseActivity extends AppCompatActivity {
         protected void onPostExecute(ArrayList<String> result) {
             super.onPostExecute(result);
             setTextView();
-            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(PurchaseActivity.this, result);
+            ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(SellActivity.this, result);
             viewPager.setAdapter(viewPagerAdapter);
         }
     }
 
-    // HACER EL PROCEDURE PARA ACTUALIZAR EL CLIENTE DEL CARRO
+    // Envia los datos al servidor
+    private class HTTPAsyncTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            String[] attributes = { "price", "date", "idCar", "idCs", "clientName" };
+            String[] values = {params[1], params[2], params[3], params[4], params[5]};
+            try {
+                try {
+                    return post.httpPost(params[0], attributes, values);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    return "Error!";
+                }
+            } catch (IOException e) {
+                return "Unable to retrieve web page. URL may be invalid.";
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            if (result.equals("OK")) {
+                Toast.makeText(SellActivity.this, R.string.SellActivityOK, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SellActivity.this, MainActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(SellActivity.this, R.string.SellActivityConnectionError, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SellActivity.this, R.string.SellActivityOK, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SellActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        }
+    }
 }

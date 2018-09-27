@@ -35,6 +35,7 @@ public class Register2Activity extends AppCompatActivity  {
     private String clientLastName;
     private int clientID;
     private int clientPhone;
+    private String clientEmail;
 
     private Spinner spCountry;
     private Spinner spProvince;
@@ -72,6 +73,7 @@ public class Register2Activity extends AppCompatActivity  {
         clientLastName = bundle.getString(Constants.registerBundleLastName);
         clientID = bundle.getInt(Constants.registerBundleID);
         clientPhone = bundle.getInt(Constants.registerBundlePhone);
+        clientEmail = bundle.getString(Constants.registerBundleEmail);
 
         spCountry = findViewById(R.id.spCountry);
         spProvince = findViewById(R.id.spProvince);
@@ -81,6 +83,8 @@ public class Register2Activity extends AppCompatActivity  {
         etDistrictDescription = findViewById(R.id.etDistrictDescription);
 
         districtPost = 0;
+
+        Toast.makeText(getApplicationContext(), clientEmail, Toast.LENGTH_SHORT).show();
 
         // Obtiene la lista de paises
         new FillCountryTask().execute(Constants.countryRoute);
@@ -155,7 +159,7 @@ public class Register2Activity extends AppCompatActivity  {
         } else {
             new HTTPAsyncTask().execute(Constants.addClient, clientName,
                     clientLastName, String.valueOf(clientID), String.valueOf(clientPhone),
-                    String.valueOf(districtPost), etDistrictDescription.getText().toString());
+                    clientEmail, String.valueOf(districtPost), etDistrictDescription.getText().toString());
         }
     }
 
@@ -316,8 +320,8 @@ public class Register2Activity extends AppCompatActivity  {
     private class HTTPAsyncTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
-            String[] attributes = {"name", "lastname", "id", "phone", "district", "description"};
-            String[] values = {params[1], params[2], params[3], params[4], params[5], params[6]};
+            String[] attributes = {"name", "lastname", "id", "phone", "email", "district", "description"};
+            String[] values = {params[1], params[2], params[3], params[4], params[5], params[6], params[7]};
             try {
                 try {
                     return post.httpPost(params[0], attributes, values);
@@ -336,7 +340,7 @@ public class Register2Activity extends AppCompatActivity  {
             if (result.equalsIgnoreCase("OK")) {
                 saveClientName();
                 Toast.makeText(Register2Activity.this, R.string.Register2ActivitySuccess, Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(Register2Activity.this, PurchaseActivity.class);
+                Intent intent = new Intent(Register2Activity.this, MainActivity.class);
                 startActivity(intent);
             }
 

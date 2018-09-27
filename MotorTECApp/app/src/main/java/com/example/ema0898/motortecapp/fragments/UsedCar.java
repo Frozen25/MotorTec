@@ -14,7 +14,7 @@ import android.widget.AdapterView;;
 import android.widget.ListView;
 
 import com.example.ema0898.motortecapp.MainActivity;
-import com.example.ema0898.motortecapp.PurchaseActivity;
+import com.example.ema0898.motortecapp.SellActivity;
 import com.example.ema0898.motortecapp.R;
 import com.example.ema0898.motortecapp.adapter.CustomAdapter;
 import com.example.ema0898.motortecapp.connections.Get;
@@ -67,7 +67,7 @@ public class UsedCar extends Fragment {
                 Bundle b = new Bundle();
                 b.putInt(Constants.newCarBundleString, cars.get(position).getIdCarro());
 
-                Intent intent = new Intent(getActivity(), PurchaseActivity.class);
+                Intent intent = new Intent(getActivity(), SellActivity.class);
                 intent.putExtras(b);
                 startActivity(intent);
 
