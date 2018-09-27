@@ -23,4 +23,21 @@ customer.addCustomer = (request, response) => {
 	});
 };
 
+customer.getCustomer = (request, response) => {
+	const sql = 'CALL getClient(?);';
+	const id = request.params.id;
+
+	request.getConnection((err, connection) => {
+		connection.query(sql, [id], (err, customer) => {
+			if (err) {
+				console.log(err);
+				response.send('Error');
+			}
+			else {
+				response.send(customer);
+			}
+		});
+	});
+};
+
 module.exports = customer;
