@@ -52,4 +52,15 @@
     <string name="LogInActivityBtn">Buscar cliente</string>
     <string name="LogInActivityOk">Cliente encontrado y cambiado</string>
     <string name="LogInActivityConnectionError">Cliente no encontrado, intenelo de nuevo</string>
+    <string name="addCarMatricula">Ingrese matricula</string>
+    <string name="addCarModelo">Ingrese modelo</string>
+    <string name="addCarColor">Ingrese color</string>
+    <string name="addCarKilometraje">Ingrese kilometraje</string>
+    <string name="addCarCs">Ingrese concesionario</string>
+    <string name="addCarMarca">Ingrese la marca</string>
+    <string name="addCarLink">Ingrese un link de la imagen del carro</string>
+    <string name="addCarPrice">Ingrese el precio</string>
+    <string name="addCarBtn">Enviar</string>
+    <string name="addCarActivityOk">Carro registrado</string>
+    <string name="addCarActivityConnectionError">Carro no registrado, intenelo de nuevo</string>
 </resources>

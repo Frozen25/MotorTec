@@ -33,7 +33,8 @@
         <activity android:name=".CsActivity" />
         <activity android:name=".UserCarActivity" />
         <activity android:name=".BuyActivity" />
-        <activity android:name=".LogIn"></activity>
+        <activity android:name=".LogIn" />
+        <activity android:name=".AddCarActivity"></activity>
     </application>
 
 </manifest>
