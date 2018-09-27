@@ -35,7 +35,8 @@ CREATE TABLE `Pais` (
 
 LOCK TABLES `Pais` WRITE;
 /*!40000 ALTER TABLE `Pais` DISABLE KEYS */;
-INSERT INTO `Pais` VALUES (1,'CostaRica'),(3,'EstadosUnidos');
+INSERT INTO `Pais` VALUES (1,'CostaRica'),
+	(3,'EstadosUnidos');
 /*!40000 ALTER TABLE `Pais` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
