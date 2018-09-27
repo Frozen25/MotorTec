@@ -38,7 +38,7 @@ LOCK TABLES `Reparacion` WRITE;
 /*!40000 ALTER TABLE `Reparacion` DISABLE KEYS */;
 INSERT INTO `Reparacion` (idReparacion, Carro_idCarro, Taller_idTaller) VALUES 
 	(1, 1,1),
-	(2, 2,1),
+	(2, 2,1),	
 	(3, 3,1),
 	(4, 4,1),
 	(5, 5,1),
@@ -86,8 +86,14 @@ INSERT INTO `Reparacion` (idReparacion, Carro_idCarro, Taller_idTaller) VALUES
 	(47, 47,2),
 	(48, 48,2),
 	(49, 49,2),
-	(50, 50,2);
+	(50, 50,2),
 
+	/*AGREGAR OTRAS REPARACIONES A LOS PRIMEROS DOS CARROS CARRO*/
+	(51, 1,1),
+	(52, 1,1),
+	(53, 2,1),
+	(54, 2,1);
+	
 /*!40000 ALTER TABLE `Reparacion` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
