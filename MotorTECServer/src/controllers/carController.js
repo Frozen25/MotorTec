@@ -30,7 +30,7 @@ controller.getOne = (request, response) => {
 	request.getConnection((err, connection) => {		
 		// Get an employee
 		const id = request.params.id;
-		connection.query('CALL getCar(?);', [id], (err, rows, fields) => {
+		connection.query('CALL getCarWithImages(?);', [id], (err, rows, fields) => {
 			if (err) {
 				console.log(err);
 			}

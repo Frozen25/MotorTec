@@ -10,6 +10,7 @@ const app = express();
 const carRoutes = require('./routes/car');
 const locationRoutes = require('./routes/location');
 const customerRoutes = require('./routes/customer');
+const transactionRoutes = require('./routes/transaction');
 
 // configuración, configura modulos necesarios para el programa, como express
 app.set('port', process.env.PORT || 3000);
@@ -31,6 +32,7 @@ app.use(express.urlencoded({extended: false}));
 app.use('/', carRoutes);
 app.use('/', locationRoutes);
 app.use('/', customerRoutes);
+app.use('/', transactionRoutes);
 
 app.listen(app.get('port'), () => {
     console.log('Server on port 3000');
