@@ -21,9 +21,9 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql, {
 	host: 'localhost',
 	user: 'root',
-	password: '',
+	password: 'Souleater',
 	port: 3306,
-	database: 'MotorTEC3_db',
+	database: 'motorTEC_db',
 	multipleStatments: true
 }, 'single'));
 app.use(express.urlencoded({extended: false}));

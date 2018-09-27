@@ -5,6 +5,12 @@ IN _idCar INT,
 IN _idCs INT,
 IN _ClientName VARCHAR(20)
 )
+/*
+    cuando se vende un carro se deberia de borrar las imagenes
+    asociadas a dicho carro
+*/
+
+
 BEGIN
 
 	INSERT INTO Factura(Monto, Compra, Fecha, Concesionario_idConcesionario, Carro_idCarro) 

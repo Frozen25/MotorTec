@@ -7,12 +7,13 @@ IN _EMAIL VARCHAR(45),
 IN _DISTRICT INT,
 IN _DESCRIPTION VARCHAR(100),
 IN _TALLER INT,
-IN _SALARIO INT
+IN _SALARIO INT,
 IN _FECHA VARCHAR(45)
 )
 
+/*
 ---salario fecha, ttaller, persona
-
+*/
 BEGIN
 
 	 INSERT INTO Ubicacion(Descripcion, Distrito_idDistrito) VALUES(_DESCRIPTION, _DISTRICT);

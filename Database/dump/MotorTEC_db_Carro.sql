@@ -48,6 +48,7 @@ CREATE TABLE `Carro` (
 -- Dumping data for table `Carro`
 --
 
+<<<<<<< Updated upstream
 LOCK TABLES `Carro` WRITE;
 /*!40000 ALTER TABLE `Carro` DISABLE KEYS */;
 INSERT INTO `Carro` ( idCarro ,Matricula, Modelo, Color, Kilometraje, Concesionario_idConcesionario, Estado_idEstado, Marca_idMarca, Cliente_idCliente) VALUES 
@@ -115,6 +116,72 @@ INSERT INTO `Carro` ( idCarro ,Matricula, Modelo, Color, Kilometraje, Concesiona
                             (59 ,'AAA059', 'Santa Fe', 'Negro', 0, 2, 1, 1, NULL),
                             (60 ,'AAA060', 'Civic', 'Negro', 46824, 2, 2, 2, NULL);
 /*!40000 ALTER TABLE `Carro` ENABLE KEYS */;
+=======
+LOCK TABLES `carro` WRITE;
+/*!40000 ALTER TABLE `carro` DISABLE KEYS */;
+INSERT INTO `carro` VALUES 
+  (1,'AAA001','Rooster','Rojo',0000084123,1,3,3,2),
+  (2,'AAA002','Rooster','Rojo',0000020894,1,3,3,2),
+  (3,'AAA003','Rooster','Rojo',0000080109,1,3,3,2),
+  (4,'AAA004','Rooster','Rojo',0000012765,1,3,3,2),
+  (5,'AAA005','Rooster','Rojo',0000091022,1,3,3,2),
+  (6,'AAA006','Rooster','Rojo',0000064888,1,3,3,2),
+  (7,'AAA007','Rooster','Rojo',0000012642,1,3,3,2),
+  (8,'AAA008','Rooster','Rojo',0000010334,1,3,3,2),
+  (9,'AAA009','Rooster','Rojo',0000045647,1,3,3,2),
+  (10,'AAA010','Rooster','Rojo',0000087722,1,3,3,2),
+  (11,'AAA011','Rooster','Azul',0000014481,1,3,3,2),
+  (12,'AAA012','Rooster','Azul',0000021968,1,3,3,2),
+  (13,'AAA013','Rooster','Azul',0000036468,1,3,3,2),
+  (14,'AAA014','Rooster','Azul',0000062709,1,3,3,2),
+  (15,'AAA015','Rooster','Azul',0000021595,1,3,3,2),
+  (16,'AAA016','Rooster','Azul',0000053256,1,3,3,2),
+  (17,'AAA017','Rooster','Azul',0000034506,1,3,3,2),
+  (18,'AAA018','Rooster','Azul',0000066077,1,3,3,2),
+  (19,'AAA019','Rooster','Azul',0000035743,1,3,3,2),
+  (20,'AAA020','Rooster','Azul',0000023138,1,3,3,2),
+  (21,'AAA021','Rooster','Amarillo',0000077483,1,3,3,3),
+  (22,'AAA022','Rooster','Amarillo',0000057783,1,3,3,3),
+  (23,'AAA023','Rooster','Amarillo',0000017204,1,3,3,3),
+  (24,'AAA024','Rooster','Amarillo',0000049239,1,3,3,3),
+  (25,'AAA025','Rooster','Amarillo',0000082413,1,3,3,3),
+  (26,'AAA026','Rooster','Amarillo',0000082315,1,3,3,3),
+  (27,'AAA027','Rooster','Amarillo',0000014765,1,3,3,3),
+  (28,'AAA028','Rooster','Amarillo',0000053909,1,3,3,3),
+  (29,'AAA029','Rooster','Amarillo',0000040169,1,3,3,3),
+  (30,'AAA030','Rooster','Amarillo',0000033191,1,3,3,3),
+  (31,'AAA031','Rooster','Naranja',0000080294,2,3,3,2),
+  (32,'AAA032','Rooster','Naranja',0000059344,2,3,3,2),
+  (33,'AAA033','Rooster','Naranja',0000039042,2,3,3,2),
+  (34,'AAA034','Rooster','Naranja',0000044098,2,3,3,2),
+  (35,'AAA035','Rooster','Naranja',0000054489,2,3,3,2),
+  (36,'AAA036','Rooster','Naranja',0000067165,2,3,3,2),
+  (37,'AAA037','Rooster','Naranja',0000056803,2,3,3,2),
+  (38,'AAA038','Rooster','Naranja',0000043940,2,3,3,2),
+  (39,'AAA039','Rooster','Naranja',0000061557,2,3,3,2),
+  (40,'AAA040','Rooster','Naranja',0000076172,2,3,3,2),
+  (41,'AAA041','Rooster','Negro',0000062751,2,3,3,3),
+  (42,'AAA042','Rooster','Negro',0000084743,2,3,3,3),
+  (43,'AAA043','Rooster','Negro',0000012474,2,3,3,3),
+  (44,'AAA044','Rooster','Negro',0000099880,2,3,3,3),
+  (45,'AAA045','Rooster','Negro',0000056285,2,3,3,3),
+  (46,'AAA046','Rooster','Negro',0000012743,2,3,3,3),
+  (47,'AAA047','Rooster','Negro',0000092821,2,3,3,3),
+  (48,'AAA048','Rooster','Negro',0000014235,2,3,3,3),
+  (49,'AAA049','Rooster','Negro',0000025742,2,3,3,3),
+  (50,'AAA050','Rooster','Negro',0000046824,2,3,3,3),
+  (51,'AAA051','Santa Fe','Negro',0000000000,1,1,1,NULL),
+  (52,'AAA052','Civic','Negro',0000084743,1,2,2,NULL),
+  (53,'AAA053','Santa Fe','Negro',0000000000,1,1,1,NULL),
+  (54,'AAA054','Civic','Negro',0000099880,1,2,2,NULL),
+  (55,'AAA055','Santa Fe','Negro',0000000000,1,1,1,NULL),
+  (56,'AAA056','Civic','Negro',0000012743,2,2,2,NULL),
+  (57,'AAA057','Santa Fe','Negro',0000000000,2,1,1,NULL),
+  (58,'AAA058','Civic','Negro',0000014235,2,2,2,NULL),
+  (59,'AAA059','Santa Fe','Negro',0000000000,2,1,1,NULL),
+  (60,'AAA060','Civic','Negro',0000046824,2,2,2,NULL);
+/*!40000 ALTER TABLE `carro` ENABLE KEYS */;
+>>>>>>> Stashed changes
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

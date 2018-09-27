@@ -1,9 +1,13 @@
 CREATE DEFINER=`root`@`localhost` PROCEDURE `reparationCars`(
 IN _Name VARCHAR(20),
 IN _LASTNAME VARCHAR(45),
-IN _ID INT,
+IN _ID INT
 
 )
+/*
+	ver los carros en reparacion de un cliente
+*/
+
 BEGIN
 	 SELECT Cliente_idCliente
 	 FROM Carro

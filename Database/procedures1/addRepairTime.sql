@@ -2,11 +2,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `addRepairTime`(
 IN _MATRICULA VARCHAR (6),
 IN _INICIO VARCHAR (20),
 IN _FIN VARCHAR (20),
+/*
 ---DATOS DEL MECANICO
+*/
 IN _NOMBRE VARCHAR(45),
 IN _LASTNAME VARCHAR(45),
 IN _ID INT
---matricula, hora a q hora, quien
+/*--matricula, hora a q hora, quien
+*/
 )
 BEGIN
 

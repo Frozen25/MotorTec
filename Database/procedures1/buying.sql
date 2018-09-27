@@ -4,6 +4,10 @@ IN _idCarro INT,
 IN _monto INT,
 IN _fecha VARCHAR(20)
 )
+/*
+    cuando se compra un carro se deberia de agregar una imagen
+*/
+
 BEGIN
 
 	INSERT INTO Factura (Monto , Compra, Fecha, Concesionario_idConcesionario,  Carro_idCarro) 

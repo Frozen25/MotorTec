@@ -1,9 +1,11 @@
-CREATE DEFINER=root`@`localhost PROCEDURE getBillXClient(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `getBillXClient`(
 IN _nombreConcesionario VARCHAR(45),
 IN _nombrePerson VARCHAR(45)
 )
 BEGIN
-
+/*
+	compras de una persona
+*/
 SELECT Factura.Fecha, Factura.idFactura, Factura.Compra, Factura.Monto, Carro.Matricula
 FROM (Concesionario 
   INNER JOIN Factura ON Factura.Concesionario_idConcesionario = Concesionario.idConcesionario
