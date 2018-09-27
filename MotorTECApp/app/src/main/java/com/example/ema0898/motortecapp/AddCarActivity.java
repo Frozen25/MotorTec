@@ -93,12 +93,75 @@ public class AddCarActivity extends AppCompatActivity {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String currentDateandTime = sdf.format(new Date());
 
-                new HTTPAsyncTask().execute(Constants.addCar, etMatricula.getText().toString(), etModelo.getText().toString(),
-                        etColor.getText().toString(), etKilometraje.getText().toString(), csName, marcaName,
-                        etLink.getText().toString(), etPrice.getText().toString(), currentDateandTime);
+                if (checkInputs()) {
+                    new HTTPAsyncTask().execute(Constants.addCar, etMatricula.getText().toString(), etModelo.getText().toString(),
+                            etColor.getText().toString(), etKilometraje.getText().toString(), csName, marcaName,
+                            etLink.getText().toString(), etPrice.getText().toString(), currentDateandTime);
+                }
 
             }
         });
+    }
+
+    private boolean checkInputs() {
+        boolean matriculaOK = false;
+        boolean modeloOK = false;
+        boolean colorOK = false;
+        boolean kilometrajeOK = false;
+        boolean linkOK = false;
+        boolean priceOK = false;
+
+        if (etMatricula.getText().toString().isEmpty()) {
+            etMatricula.setError("Debe ingresar una matricula");
+        } else {
+            matriculaOK = true;
+        }
+
+        if (etModelo.getText().toString().isEmpty()) {
+            etModelo.setError("Debe ingresar un modelo");
+        } else {
+            modeloOK = true;
+        }
+
+        if (etColor.getText().toString().isEmpty()) {
+            etColor.setError("Debe ingresar un error");
+        } else {
+            colorOK = true;
+        }
+
+        if (etKilometraje.getText().toString().isEmpty()) {
+            etKilometraje.setError("Debe ingresar un kilometraje");
+        } else {
+            kilometrajeOK = true;
+        }
+
+        if (etLink.getText().toString().isEmpty()) {
+            etLink.setError("Debe ingresar un link");
+        } else {
+            linkOK = true;
+        }
+
+        if (etPrice.getText().toString().isEmpty()) {
+            etPrice.setError("Debe ingresar un precio");
+        } else {
+            priceOK = true;
+        }
+
+        if (!android.text.TextUtils.isDigitsOnly(etKilometraje.getText().toString())) {
+            etKilometraje.setError("Debe ingresar un kilometraje válido");
+            kilometrajeOK = false;
+        } else {
+            kilometrajeOK = true;
+        }
+
+        if (!android.text.TextUtils.isDigitsOnly(etPrice.getText().toString())) {
+            etPrice.setError("Debe ingresar un precio válido");
+            priceOK = false;
+        } else {
+            priceOK = true;
+        }
+
+        return matriculaOK && modeloOK && colorOK && kilometrajeOK && linkOK && priceOK;
     }
 
     public class FillSpinnerCs extends AsyncTask<String, String, ArrayList<String>> {
