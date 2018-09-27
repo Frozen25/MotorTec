@@ -43,7 +43,18 @@ CREATE TABLE `Mecanico` (
 
 LOCK TABLES `Mecanico` WRITE;
 /*!40000 ALTER TABLE `Mecanico` DISABLE KEYS */;
-INSERT INTO `Mecanico` VALUES (1, 213000, '2015-01-01', )
+INSERT INTO `Mecanico`  VALUES 
+  (1 , 213000, '2015-01-01', 1,1),  
+  (2 , 213000, '2015-01-01', 1,2),  
+  (3 , 213000, '2015-01-01', 1,3),  
+  (4 , 213000, '2015-01-01', 1,4),
+  (5 , 213000, '2015-01-01', 2,5),
+  (6 , 213000, '2015-01-01', 2,6),  
+  (7 , 213000, '2015-01-01', 2,7),  
+  (8 , 213000, '2015-01-01', 2,8),  
+  (9 , 213000, '2015-01-01', 2,9),
+  (10, 213000, '2015-01-01', 2,10)
+  ;    
 /*!40000 ALTER TABLE `Mecanico` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
